@@ -1,0 +1,1 @@
+INSERT INTO usuario (id, email, password) VALUES (1, 'admin@totvs.com.br', '10LUyw0ZjVFl/R92NRKBXg==');
