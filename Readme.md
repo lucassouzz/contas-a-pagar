@@ -4,9 +4,9 @@
 ## Documentação
 - Na pasta "docs" deste projeto, você encontrará recursos úteis para testar e explorar a aplicação:
 #### Arquivo CSV
-O arquivo `file-to-upload.csv` localizado em `docs/` pode ser utilizado para testar a funcionalidade de importação de contas a pagar via arquivo CSV. Este arquivo contém dados fictícios de contas a pagar que podem ser utilizados para realizar testes na aplicação.
+- O arquivo `file-to-upload.csv` localizado em `docs/` pode ser utilizado para testar a funcionalidade de importação de contas a pagar via arquivo CSV. Este arquivo contém dados fictícios de contas a pagar que podem ser utilizados para realizar testes na aplicação.
 #### Arquivo do Insomnia
-O arquivo `insomnia.json` localizado em `docs/` contém uma coleção do Insomnia com os endpoints da API mapeados. Você pode importar este arquivo no Insomnia para facilitar o teste e a exploração das APIs da aplicação.
+- O arquivo `insomnia.json` localizado em `docs/` contém uma coleção do Insomnia com os endpoints da API mapeados. Você pode importar este arquivo no Insomnia para facilitar o teste e a exploração das APIs da aplicação.
 
 ## Requisitos Gerais
 - Utilização da linguagem de programação Java, versão 17 ou superior.
