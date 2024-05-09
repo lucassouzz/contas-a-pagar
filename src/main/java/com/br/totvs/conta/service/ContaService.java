@@ -22,6 +22,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static com.br.totvs.conta.repository.ContaSpecification.buildFilter;
 import static com.br.totvs.core.util.FileUtil.*;
 
 @Slf4j
@@ -52,17 +53,9 @@ public class ContaService {
     }
 
     public Page<Conta> findByFilter(LocalDate vencimento, String descricao, Pageable pageable) {
-        Specification<Conta> spec = Specification.where(null);
+        Specification<Conta> filter = buildFilter(vencimento, descricao);
 
-        if (vencimento != null) {
-            spec = spec.and((root, query, builder) -> builder.equal(root.get("vencimento"), vencimento));
-        }
-
-        if (descricao != null && !descricao.isEmpty()) {
-            spec = spec.and((root, query, builder) -> builder.like(builder.upper(root.get("descricao")), "%" + descricao.toUpperCase() + "%"));
-        }
-
-        return repository.findAll(spec, pageable);
+        return repository.findAll(filter, pageable);
     }
 
     public void upload(MultipartFile multipartFile) throws IOException {
