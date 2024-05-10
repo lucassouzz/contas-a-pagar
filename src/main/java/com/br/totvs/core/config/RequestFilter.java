@@ -11,17 +11,20 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
+import java.util.List;
 
 import static com.br.totvs.core.constants.Constants.Jwt.SECRET;
 
 @Component
 public class RequestFilter extends OncePerRequestFilter {
 
+    private static final List<String> PATHS = List.of("/usuario/login", "/v3/api-docs");
+
     @Override
     protected boolean shouldNotFilter(HttpServletRequest request) {
         String path = request.getRequestURI();
 
-        return path.contains("/usuario/login");
+        return isAllowPath(path);
     }
 
     @Override
@@ -41,5 +44,9 @@ public class RequestFilter extends OncePerRequestFilter {
         }
 
         filterChain.doFilter(request, response);
+    }
+
+    protected boolean isAllowPath(String path) {
+        return PATHS.contains(path) || path.contains("swagger");
     }
 }
