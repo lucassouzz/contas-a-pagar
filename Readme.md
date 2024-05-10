@@ -3,6 +3,9 @@
 
 ## Documentação
 - Na pasta "docs" deste projeto, você encontrará recursos úteis para testar e explorar a aplicação:
+
+#### Swagger v3
+- Swagger disponível em `http://{host}:{port}/swagger-ui/index.html`.
 #### Arquivo CSV
 - O arquivo `file-to-upload.csv` localizado em `docs/csv` pode ser utilizado para testar a funcionalidade de importação de contas a pagar via arquivo CSV. Este arquivo contém dados fictícios de contas a pagar que podem ser utilizados para realizar testes na aplicação.
 #### Arquivo do Insomnia
